@@ -11,8 +11,8 @@ std::vector<ContinuityInfo> CalculateRangeAndReadings(std::vector<int> periodicC
 {
     int CurrentIndexInPeriodicCurrentVector = 0;
 	std::vector<ContinuityInfo> continuityInfoList;
-    while(true == (CurrentIndexInPeriodicCurrentVector < periodicCurrentVector.size()))
-	{
+   // while(true == (CurrentIndexInPeriodicCurrentVector < periodicCurrentVector.size()))
+	//{
 	   ContinuityInfo continuityInfo;
        checkForContinuityInPeriodicCurrent(periodicCurrentVector, CurrentIndexInPeriodicCurrentVector, continuityInfo);
 	   if(continuityInfo.m_totalReadingContinuousRange != 0)
@@ -21,6 +21,6 @@ std::vector<ContinuityInfo> CalculateRangeAndReadings(std::vector<int> periodicC
 	      CurrentIndexInPeriodicCurrentVector = continuityInfo.m_endIndexOfContinuousRange;
 	   }
 	   CurrentIndexInPeriodicCurrentVector++;
-	}
+	//}
 	return continuityInfoList;
 }
