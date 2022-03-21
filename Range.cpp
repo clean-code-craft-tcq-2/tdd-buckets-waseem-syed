@@ -10,7 +10,7 @@ void checkForContinuityInPeriodicCurrent(std::vector<int> periodicCurrentVector,
 std::vector<ContinuityInfo> CalculateRangeAndReadings(std::vector<int> periodicCurrentVector)
 {
     int CurrentIndexInPeriodicCurrentVector = 0;
-	std:vector<ContinuityInfo> continuityInfoList;
+	std::vector<ContinuityInfo> continuityInfoList;
     while(true == (CurrentIndexInPeriodicCurrentVector < periodicCurrentVector.size()))
 	{
 	   ContinuityInfo continuityInfo;
