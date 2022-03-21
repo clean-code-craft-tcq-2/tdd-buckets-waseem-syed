@@ -6,7 +6,7 @@ TEST_CASE("Test Smallest Range")
 {
 
   std::vector<int> periodicCurrentInput {1, 2, 4};
-  int numberOfReadings = CalculateRangeAndReadings(periodicCurrentInput);
-
-  assert(numberOfReadings == 2);
+  std:vector<ContinuityInfo> ContinuityInfoList = CalculateRangeAndReadings(periodicCurrentInput);
+  assert(true == ContinuityInfoList.size());
+  assert(ContinuityInfoList[0].m_totalReadingContinuousRange == 2);
 }
