@@ -10,9 +10,9 @@ struct ContinuityInfo
 	int m_totalReadingContinuousRange;
 	
 	ContinuityInfo()
-	: m_startIndexOfContinuousRange(0);
-	, m_endIndexOfContinuousRange(0);
-	, m_totalReadingContinuousRange(0);
+	: m_startIndexOfContinuousRange(0)
+	, m_endIndexOfContinuousRange(0)
+	, m_totalReadingContinuousRange(0)
 };
 
 int CalculateRangeAndReadings(std::vector<int> periodicCurrentVector);

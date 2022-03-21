@@ -11,7 +11,7 @@ std:vector<ContinuityInfo> CalculateRangeAndReadings(std::vector<int> periodicCu
 {
     int CurrentIndexInPeriodicCurrentVector = 0;
 	std:vector<ContinuityInfo> continuityInfoList;
-    while(true == (CurrentIndexInPeriodicCurrentVector < periodicCurrentVector.size())
+    while(true == (CurrentIndexInPeriodicCurrentVector < periodicCurrentVector.size()))
 	{
 	   ContinuityInfo continuityInfo;
        checkForContinuityInPeriodicCurrent(periodicCurrentVector, CurrentIndexInPeriodicCurrentVector, continuityInfo);
