@@ -10,6 +10,8 @@ TEST_CASE("Test CalculateRangeAndReadings")
   ContinuityInfoList = CalculateRangeAndReadings(periodicCurrentInput);
   assert(true == ContinuityInfoList.size());
   REQUIRE(ContinuityInfoList[0].m_totalReadingContinuousRange == 2);
+  REQUIRE(ContinuityInfoList[0].m_startIndexValueOfContinuousRange == 1);
+  REQUIRE(ContinuityInfoList[0].m_endIndexValueOfContinuousRange == 2);
 }
 
 TEST_CASE("Test checkForContinuityInPeriodicCurrent")
@@ -19,6 +21,8 @@ TEST_CASE("Test checkForContinuityInPeriodicCurrent")
    ContinuityInfo continuityInfo;
    checkForContinuityInPeriodicCurrent(periodicCurrentInput, CurrentIndexInPeriodicCurrentVector, continuityInfo);
    REQUIRE(continuityInfo.m_totalReadingContinuousRange == 2);
+   REQUIRE(continuityInfo.m_startIndexValueOfContinuousRange == 1);
+   REQUIRE(continuityInfo.m_endIndexValueOfContinuousRange == 2);  
 }
 
 TEST_CASE("Test isValueContinuous")
