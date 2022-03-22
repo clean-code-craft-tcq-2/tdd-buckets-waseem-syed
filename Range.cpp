@@ -1,26 +1,47 @@
 #include "Range.h"
 
+bool isValueContinuous(int currentIndexValue, int followingIndexValue)
+{
+   if(((currentIndexValue - followingIndexValue) == 1) || ((followingIndexValue - currentIndexValue) == 1))
+   {
+	   return true;
+   }
+   return false;
+}
+
 void checkForContinuityInPeriodicCurrent(std::vector<int> periodicCurrentVector, int CurrentIndexInPeriodicCurrentVector, ContinuityInfo& continuityInfo)
 {
-	continuityInfo.m_totalReadingContinuousRange = 2;
-	continuityInfo.m_startIndexOfContinuousRange = 0;
-	continuityInfo.m_endIndexOfContinuousRange = 1;
+	int startIndex = periodicCurrentVector[CurrentIndexInPeriodicCurrentVector];
+   for(int index = CurrentIndexInPeriodicCurrentVector; CurrentIndexInPeriodicCurrentVector <= (periodicCurrentVector.size() - 1); CurrentIndexInPeriodicCurrentVector++)
+   {
+	   if(isValueContinuous(periodicCurrentVector[CurrentIndexInPeriodicCurrentVector], periodicCurrentVector[CurrentIndexInPeriodicCurrentVector + 1]))
+	   {
+		   continuityInfo.m_totalReadingContinuousRange ++;
+		   continuityInfo.m_startIndexValueOfContinuousRange = startIndex;
+		   continuityInfo.m_endIndexValueOfContinuousRange = periodicCurrentVector[CurrentIndexInPeriodicCurrentVector + 1];
+		   CurrentIndexInPeriodicCurrentVector++;
+	   }
+	   else
+	   {
+		   break;
+	   }
+   }
 }
 
 std::vector<ContinuityInfo> CalculateRangeAndReadings(std::vector<int> periodicCurrentVector)
 {
     int CurrentIndexInPeriodicCurrentVector = 0;
 	std::vector<ContinuityInfo> continuityInfoList;
-   // while(true == (CurrentIndexInPeriodicCurrentVector < periodicCurrentVector.size()))
-	//{
+    while(true == (CurrentIndexInPeriodicCurrentVector < periodicCurrentVector.size()))
+	{
 	   ContinuityInfo continuityInfo;
        checkForContinuityInPeriodicCurrent(periodicCurrentVector, CurrentIndexInPeriodicCurrentVector, continuityInfo);
 	   if(continuityInfo.m_totalReadingContinuousRange != 0)
 	   {
 		  continuityInfoList.push_back(continuityInfo);
-	      CurrentIndexInPeriodicCurrentVector = continuityInfo.m_endIndexOfContinuousRange;
+	      CurrentIndexInPeriodicCurrentVector = continuityInfo.m_endIndexValueOfContinuousRange;
 	   }
 	   CurrentIndexInPeriodicCurrentVector++;
-	//}
+	}
 	return continuityInfoList;
 }

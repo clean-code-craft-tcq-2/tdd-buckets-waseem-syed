@@ -20,3 +20,10 @@ TEST_CASE("Test checkForContinuityInPeriodicCurrent")
    checkForContinuityInPeriodicCurrent(periodicCurrentInput, CurrentIndexInPeriodicCurrentVector, continuityInfo);
    REQUIRE(continuityInfo.m_totalReadingContinuousRange == 2);
 }
+
+TEST_CASE("Test isValueContinuous")
+{
+	int currentIndexValue = 5;
+	int followingIndexValue = 7;
+	REQUIRE(false == (isValueContinuous(currentIndexValue, followingIndexValue);
+}
