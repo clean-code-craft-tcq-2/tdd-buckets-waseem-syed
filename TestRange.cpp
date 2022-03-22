@@ -25,5 +25,5 @@ TEST_CASE("Test isValueContinuous")
 {
 	int currentIndexValue = 5;
 	int followingIndexValue = 7;
-	REQUIRE(false == (isValueContinuous(currentIndexValue, followingIndexValue);
+	REQUIRE(false == (isValueContinuous(currentIndexValue, followingIndexValue)));
 }
