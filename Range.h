@@ -12,7 +12,7 @@ struct ContinuityInfo
 	ContinuityInfo()
 	: m_startIndexValueOfContinuousRange(0)
 	, m_endIndexValueOfContinuousRange(0)
-	, m_totalReadingContinuousRange(0)
+	, m_totalReadingContinuousRange(1)
 	{
 	}
 };

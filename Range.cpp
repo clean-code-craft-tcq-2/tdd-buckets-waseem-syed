@@ -36,7 +36,7 @@ std::vector<ContinuityInfo> CalculateRangeAndReadings(std::vector<int> periodicC
 	{
 	   ContinuityInfo continuityInfo;
        checkForContinuityInPeriodicCurrent(periodicCurrentVector, CurrentIndexInPeriodicCurrentVector, continuityInfo);
-	   if(continuityInfo.m_totalReadingContinuousRange != 0)
+	   if(continuityInfo.m_totalReadingContinuousRange > 1)
 	   {
 		  continuityInfoList.push_back(continuityInfo);
 	      CurrentIndexInPeriodicCurrentVector = continuityInfo.m_endIndexValueOfContinuousRange;
