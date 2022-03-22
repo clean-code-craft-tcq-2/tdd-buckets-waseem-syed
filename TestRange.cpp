@@ -12,6 +12,17 @@ TEST_CASE("Test CalculateRangeAndReadings")
   REQUIRE(ContinuityInfoList[0].m_totalReadingContinuousRange == 2);
   REQUIRE(ContinuityInfoList[0].m_startIndexValueOfContinuousRange == 1);
   REQUIRE(ContinuityInfoList[0].m_endIndexValueOfContinuousRange == 2);
+	
+  ::std::vector<int> periodicCurrentInput1 {3, 3, 5, 4, 10, 11, 12};
+  std::vector<ContinuityInfo> ContinuityInfoList1;
+  ContinuityInfoList1 = CalculateRangeAndReadings(periodicCurrentInput1);
+  assert(2 == ContinuityInfoList1.size());
+  REQUIRE(ContinuityInfoList1[0].m_totalReadingContinuousRange == 4);
+  REQUIRE(ContinuityInfoList1[0].m_startIndexValueOfContinuousRange == 3);
+  REQUIRE(ContinuityInfoList1[0].m_endIndexValueOfContinuousRange == 5);
+  REQUIRE(ContinuityInfoList1[1].m_totalReadingContinuousRange == 3);
+  REQUIRE(ContinuityInfoList1[1].m_startIndexValueOfContinuousRange == 10);
+  REQUIRE(ContinuityInfoList1[1].m_endIndexValueOfContinuousRange == 12);
 }
 
 TEST_CASE("Test checkForContinuityInPeriodicCurrent")
