@@ -17,10 +17,9 @@ void checkForContinuityInPeriodicCurrent(std::vector<int> periodicCurrentVector,
 {
 	   ::std::cout<<"checkForContinuityInPeriodicCurrent : 18\n";
 	int startIndex = periodicCurrentVector[CurrentIndexInPeriodicCurrentVector];
-   for(int index = CurrentIndexInPeriodicCurrentVector; index <= (periodicCurrentVector.size() - 1); index++)
+   for(int index = CurrentIndexInPeriodicCurrentVector; index < (periodicCurrentVector.size() - 1); index++)
    {
 	   	   ::std::cout<<"checkForContinuityInPeriodicCurrent : 22\n";
-	   ::std::cout<<"checkForContinuityInPeriodicCurrent : 25 : %d\n"<<index;
 	   if(isValueContinuous(periodicCurrentVector[index], periodicCurrentVector[index + 1]))
 	   {
 		   ::std::cout<<"checkForContinuityInPeriodicCurrent : 25\n";
