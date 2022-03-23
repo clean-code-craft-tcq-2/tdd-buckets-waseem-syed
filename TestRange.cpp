@@ -8,7 +8,7 @@ TEST_CASE("Test CalculateRangeAndReadings")
   std::vector<int> periodicCurrentInput {1, 2, 4};
   std::vector<ContinuityInfo> ContinuityInfoList;
   ContinuityInfoList = CalculateRangeAndReadings(periodicCurrentInput);
-  //assert(true == ContinuityInfoList.size());
+  assert(true == ContinuityInfoList.size());
   REQUIRE(ContinuityInfoList[0].m_totalReadingContinuousRange == 2);
   REQUIRE(ContinuityInfoList[0].m_startIndexValueOfContinuousRange == 1);
   REQUIRE(ContinuityInfoList[0].m_endIndexValueOfContinuousRange == 2);
@@ -17,12 +17,12 @@ TEST_CASE("Test CalculateRangeAndReadings")
   std::vector<ContinuityInfo> ContinuityInfoList1;
   ContinuityInfoList1 = CalculateRangeAndReadings(periodicCurrentInput1);
  // assert(2 == ContinuityInfoList1.size());
-  //REQUIRE(ContinuityInfoList1[0].m_totalReadingContinuousRange == 4);
-  //REQUIRE(ContinuityInfoList1[0].m_startIndexValueOfContinuousRange == 3);
-  //REQUIRE(ContinuityInfoList1[0].m_endIndexValueOfContinuousRange == 5);
-  //REQUIRE(ContinuityInfoList1[1].m_totalReadingContinuousRange == 3);
-  //REQUIRE(ContinuityInfoList1[1].m_startIndexValueOfContinuousRange == 10);
-  //REQUIRE(ContinuityInfoList1[1].m_endIndexValueOfContinuousRange == 12);
+  REQUIRE(ContinuityInfoList1[0].m_totalReadingContinuousRange == 4);
+  REQUIRE(ContinuityInfoList1[0].m_startIndexValueOfContinuousRange == 3);
+  REQUIRE(ContinuityInfoList1[0].m_endIndexValueOfContinuousRange == 5);
+  REQUIRE(ContinuityInfoList1[1].m_totalReadingContinuousRange == 3);
+  REQUIRE(ContinuityInfoList1[1].m_startIndexValueOfContinuousRange == 10);
+  REQUIRE(ContinuityInfoList1[1].m_endIndexValueOfContinuousRange == 12);
 
 }
 
