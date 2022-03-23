@@ -23,6 +23,7 @@ TEST_CASE("Test CalculateRangeAndReadings")
   REQUIRE(ContinuityInfoList1[1].m_totalReadingContinuousRange == 3);
   REQUIRE(ContinuityInfoList1[1].m_startIndexValueOfContinuousRange == 10);
   REQUIRE(ContinuityInfoList1[1].m_endIndexValueOfContinuousRange == 12);
+	
 }
 
 TEST_CASE("Test checkForContinuityInPeriodicCurrent")
