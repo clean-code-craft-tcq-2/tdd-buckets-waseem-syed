@@ -40,7 +40,7 @@ std::vector<ContinuityInfo> CalculateRangeAndReadings(std::vector<int> periodicC
 	   if(continuityInfo.m_totalReadingContinuousRange > 1)
 	   {
 		  continuityInfoList.push_back(continuityInfo);
-	      CurrentIndexInPeriodicCurrentVector = continuityInfo.m_totalReadingContinuousRange - 1;
+	      CurrentIndexInPeriodicCurrentVector = CurrentIndexInPeriodicCurrentVector + continuityInfo.m_totalReadingContinuousRange - 1;
 	   }
 	   CurrentIndexInPeriodicCurrentVector++;
 	}
