@@ -5,7 +5,8 @@
 bool isValueContinuous(int currentIndexValue, int followingIndexValue)
 {
    ::std::cout<<"isValueContinuous : 7\n";
-   if(((currentIndexValue - followingIndexValue) == 1) || ((currentIndexValue - followingIndexValue) == 0))//Continuous element or same element
+      ::std::cout<<"isValueContinuous : %d , %d\n"<< currentIndexValue << " "<<followingIndexValue<<"\n";
+   if(((followingIndexValue - currentIndexValue) == 1) || ((followingIndexValue - currentIndexValue) == 0))//Continuous element or same element
    {
 	      ::std::cout<<"isValueContinuous : 10\n";
 	   return true;
