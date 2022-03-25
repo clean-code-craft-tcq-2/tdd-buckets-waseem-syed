@@ -29,7 +29,7 @@ void checkForContinuityInPeriodicCurrent(std::vector<int> periodicCurrentVector,
    }
 }
 
-std::vector<ContinuityInfo> CalculateRangeAndReadings(std::vector<int> periodicCurrentVector)
+std::vector<ContinuityInfo> sortedPeriodicCurrents(std::vector<int> periodicCurrentVector)
 {
     int CurrentIndexInPeriodicCurrentVector = 0;
 	std::vector<ContinuityInfo> continuityInfoList;
