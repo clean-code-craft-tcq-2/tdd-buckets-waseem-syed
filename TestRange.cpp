@@ -32,7 +32,7 @@ TEST_CASE("Test CalculateRangeAndReadings")
 
 TEST_CASE("Test checkForContinuityInPeriodicCurrent")
 {
-   std::vector<int> periodicCurrentInput {1, 2, 4};
+   std::vector<int> sortedPeriodicCurrents {1, 2, 4};
    int CurrentIndexInPeriodicCurrentVector = 0;
    ContinuityInfo continuityInfo;
    checkForContinuityInPeriodicCurrent(sortedPeriodicCurrents, CurrentIndexInPeriodicCurrentVector, continuityInfo);
