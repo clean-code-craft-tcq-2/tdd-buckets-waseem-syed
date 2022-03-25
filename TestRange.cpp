@@ -35,14 +35,14 @@ TEST_CASE("Test checkForContinuityInPeriodicCurrent")
    std::vector<int> periodicCurrentInput {1, 2, 4};
    int CurrentIndexInPeriodicCurrentVector = 0;
    ContinuityInfo continuityInfo;
-   checkForContinuityInPeriodicCurrent(periodicCurrentInput, CurrentIndexInPeriodicCurrentVector, continuityInfo);
+   sortedPeriodicCurrents(periodicCurrentInput, CurrentIndexInPeriodicCurrentVector, continuityInfo);
    REQUIRE(continuityInfo.m_totalReadingContinuousRange == 2);
    REQUIRE(continuityInfo.m_startIndexValueOfContinuousRange == 1);
    REQUIRE(continuityInfo.m_endIndexValueOfContinuousRange == 2);  
 	
    CurrentIndexInPeriodicCurrentVector = 1;
    ContinuityInfo continuityInfo1;
-   checkForContinuityInPeriodicCurrent(periodicCurrentInput, CurrentIndexInPeriodicCurrentVector, continuityInfo1);
+   sortedPeriodicCurrents(periodicCurrentInput, CurrentIndexInPeriodicCurrentVector, continuityInfo1);
    //default values
    REQUIRE(continuityInfo1.m_totalReadingContinuousRange == 1);
    REQUIRE(continuityInfo1.m_startIndexValueOfContinuousRange == 0);
