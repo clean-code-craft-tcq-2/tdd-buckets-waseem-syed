@@ -18,5 +18,6 @@ struct ContinuityInfo
 };
 
 std::vector<ContinuityInfo> CalculateRangeAndReadings(std::vector<int> periodicCurrentVector);
+std::vector<ContinuityInfo> sortedPeriodicCurrents(std::vector<int> periodicCurrentVector);
 void checkForContinuityInPeriodicCurrent(std::vector<int> periodicCurrentVector, int CurrentIndexInPeriodicCurrentVector, ContinuityInfo& continuityInfo);
 bool isValueContinuous(int currentIndexValue, int followingIndexValue);
