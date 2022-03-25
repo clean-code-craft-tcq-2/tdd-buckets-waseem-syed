@@ -11,7 +11,7 @@ bool isValueContinuous(int currentIndexValue, int followingIndexValue)
    return false;
 }
 
-void checkForContinuityInPeriodicCurrent(std::vector<int> periodicCurrentVector, int CurrentIndexInPeriodicCurrentVector, ContinuityInfo& continuityInfo)
+void sortedPeriodicCurrents(std::vector<int> periodicCurrentVector, int CurrentIndexInPeriodicCurrentVector, ContinuityInfo& continuityInfo)
 {
 	int startIndex = periodicCurrentVector[CurrentIndexInPeriodicCurrentVector];
    for(int index = CurrentIndexInPeriodicCurrentVector; index < (periodicCurrentVector.size() - 1); index++)
@@ -29,7 +29,7 @@ void checkForContinuityInPeriodicCurrent(std::vector<int> periodicCurrentVector,
    }
 }
 
-std::vector<ContinuityInfo> sortedPeriodicCurrents(std::vector<int> periodicCurrentVector)
+std::vector<ContinuityInfo> CalculateRangeAndReadings(std::vector<int> periodicCurrentVector)
 {
     int CurrentIndexInPeriodicCurrentVector = 0;
 	std::vector<ContinuityInfo> continuityInfoList;
@@ -37,7 +37,7 @@ std::vector<ContinuityInfo> sortedPeriodicCurrents(std::vector<int> periodicCurr
     while(true == (CurrentIndexInPeriodicCurrentVector < periodicCurrentVector.size()))
 	{
 	   ContinuityInfo continuityInfo;
-       checkForContinuityInPeriodicCurrent(periodicCurrentVector, CurrentIndexInPeriodicCurrentVector, continuityInfo);
+           sortedPeriodicCurrents(periodicCurrentVector, CurrentIndexInPeriodicCurrentVector, continuityInfo);
 	   if(continuityInfo.m_totalReadingContinuousRange > 1)
 	   {
 		  continuityInfoList.push_back(continuityInfo);
