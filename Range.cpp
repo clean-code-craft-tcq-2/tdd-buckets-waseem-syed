@@ -13,14 +13,14 @@ bool isValueContinuous(int currentIndexValue, int followingIndexValue)
 
 void checkForContinuityInPeriodicCurrent(std::vector<int> sortedPeriodicCurrents, int CurrentIndexInPeriodicCurrentVector, ContinuityInfo& continuityInfo)
 {
-	int startIndex = periodicCurrentVector[CurrentIndexInPeriodicCurrentVector];
-   for(int index = CurrentIndexInPeriodicCurrentVector; index < (periodicCurrentVector.size() - 1); index++)
+	int startIndex = sortedPeriodicCurrents[CurrentIndexInPeriodicCurrentVector];
+   for(int index = CurrentIndexInPeriodicCurrentVector; index < (sortedPeriodicCurrents.size() - 1); index++)
    {
-	   if(isValueContinuous(periodicCurrentVector[index], periodicCurrentVector[index + 1]))
+	   if(isValueContinuous(sortedPeriodicCurrents[index], sortedPeriodicCurrents[index + 1]))
 	   {
 		   continuityInfo.m_totalReadingContinuousRange ++;
 		   continuityInfo.m_startIndexValueOfContinuousRange = startIndex;
-		   continuityInfo.m_endIndexValueOfContinuousRange = periodicCurrentVector[index + 1];
+		   continuityInfo.m_endIndexValueOfContinuousRange = sortedPeriodicCurrents[index + 1];
 	   }
 	   else
 	   {
