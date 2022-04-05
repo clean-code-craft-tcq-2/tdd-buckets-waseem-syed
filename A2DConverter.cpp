@@ -3,7 +3,8 @@
 
 int getAmpsInDigital(int ampsInAnalog)
 {
-   return 3;
+  double ampere = 10 * (float(ampsInAnalog)/4094);
+  return int(round(ampere));
 }
 
 std::vector<int> ConvertAmpsListFromAToD(std::vector<int> AmpsInAnalog)
