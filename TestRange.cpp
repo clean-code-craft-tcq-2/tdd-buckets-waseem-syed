@@ -39,7 +39,6 @@ TEST_CASE("Test CalculateRangeAndReadings No Continuous reading, Expect empty co
 TEST_CASE("Test checkForContinuityInPeriodicCurrent positive")
 {
    std::vector<int> sortedPeriodicCurrents {1, 2, 4};
-   std::vector<int> periodicCurrentInput {1, 2, 4};
    int CurrentIndexInPeriodicCurrentVector = 0;
    ContinuityInfo continuityInfo;
    checkForContinuityInPeriodicCurrent(sortedPeriodicCurrents, CurrentIndexInPeriodicCurrentVector, continuityInfo);
@@ -51,7 +50,8 @@ TEST_CASE("Test checkForContinuityInPeriodicCurrent positive")
 
 TEST_CASE("Test checkForContinuityInPeriodicCurrent Negative")
 {
-   CurrentIndexInPeriodicCurrentVector = 1;
+   std::vector<int> sortedPeriodicCurrents {1, 2, 4};
+   int CurrentIndexInPeriodicCurrentVector = 1;
    ContinuityInfo continuityInfo1;
    checkForContinuityInPeriodicCurrent(sortedPeriodicCurrents, CurrentIndexInPeriodicCurrentVector, continuityInfo1);
    //default values
@@ -62,8 +62,8 @@ TEST_CASE("Test checkForContinuityInPeriodicCurrent Negative")
 
 TEST_CASE("Test isValueContinuous Positive")
 {
-	currentIndexValue = 5;
-	followingIndexValue = 5;
+	int currentIndexValue = 5;
+	int followingIndexValue = 5;
 	REQUIRE(true == (isValueContinuous(currentIndexValue, followingIndexValue)));
 
 	currentIndexValue = 5;
