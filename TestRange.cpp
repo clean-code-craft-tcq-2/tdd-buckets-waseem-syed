@@ -47,11 +47,24 @@ TEST_CASE("Test isValueContinuous")
 
 //Test AToD cpnverter implementation
 
-TEST_CASE("Test ConvertAmpsListFromAToD") 
+TEST_CASE("Test ConvertAmpsListFromAToD Positive") 
 {
    std::vector<int> ampsInAnalog {4094, 4000};
    std::vector<int> ampsInDigital = ConvertAmpsListFromAToD(ampsInAnalog);
    assert(false == ampsInDigital.empty());
    REQUIRE(ampsInDigital[0] == 10);
    REQUIRE(ampsInDigital[1] == 10);
+}
+
+TEST_CASE("Test ConvertAmpsListFromAToD Negative") 
+{
+   std::vector<int> ampsInAnalog {0, 4095};
+   std::vector<int> ampsInDigital = ConvertAmpsListFromAToD(ampsInAnalog);
+   assert(true == ampsInDigital.empty());
+}
+
+TEST_CASE("Test getAmpsInDigital")
+{
+	int ampsInAnalog = 4094;
+	REQUIRE((getAmpsInDigital(ampsInAnalog)) == 10);
 }
