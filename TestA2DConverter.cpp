@@ -6,6 +6,6 @@ TEST_CASE("Test ConvertAmpsListFromAToD")
 {
    std::vector<int> ampsInAnalog {4094, 4000};
    std::vector<int> ampsInDigital = ConvertAmpsListFromAToD(ampsInAnalog);
-   assert(flase == ampsInDigital.empty());
+   assert(false == ampsInDigital.empty());
 
 }
