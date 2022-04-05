@@ -17,6 +17,7 @@ std::vector<int> ConvertAmpsListFromAToD(std::vector<int> AmpsInAnalog)
 			int AmpInDigital = getAmpsInDigital(*AnalogDataItr);
 			AmpsInDigital.push_back(AmpInDigital);
 		}
+		AnalogDataItr++;
 	}
 	return AmpsInDigital;
 }
